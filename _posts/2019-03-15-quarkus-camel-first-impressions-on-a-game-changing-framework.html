@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Quarkus Camel, First Impressions on a Game Changing Framework"
-date: 2019-09-17 05:00:00 +0200
+date: 2019-03-15 05:00:00 +0200
 published: 2019-03-15 05:00:00 +0200
 comments: true
 categories: development
@@ -75,16 +75,16 @@ github: "https://github.com/alainpham/quarkus-camel-first-impressions"
     available on a VM or a bare metal server.
     The boot time was not such a critical constraint. In usual Java application the boot time of 4 to 10 seconds
     (and even more) was
-    entirely acceptable. The initial memory footprint is usually also negligible due to the fact that a large amount of memory 
+    entirely acceptable. The initial memory footprint is usually also negligible due to the fact that a large amount of memory
     would be dedicated to the application server anyway.
 </p>
 
 <p>
-    The paradigm has shifted in the world of containers and Kubernetes. The boot time has become highly critical. A low boot time 
+    The paradigm has shifted in the world of containers and Kubernetes. The boot time has become highly critical. A low boot time
     is what would allow a service to scale up and down quickly and achieve higher
     workload density on cloud infrastructures. A minimal initial memory footprint per instance is what would
     allow the service to start small and be scaled efficiently when needed.
-    In the extreme case, when considering the rise of Functions as a Service booting up quickly becomes even more critical. 
+    In the extreme case, when considering the rise of Functions as a Service booting up quickly becomes even more critical.
     In this case we aim at scaling the service down to zero instances when there are no requests and starting
     it only when client requests are coming in.
     We can see here that the boot time needs to be several orders of magnitude lower than what we are used to.
@@ -246,7 +246,7 @@ Listening for transport dt_socket at address: 5005
 </h3>
 
 <p>
-    In order to compile the project we need to setup GraalVM. 
+    In order to compile the project we need to setup GraalVM.
     Download the VM from the following website <a href="http://www.graalvm.org/downloads/">http://www.graalvm.org/downloads/</a>.
     Extract the package somewhere and set the env variable GRAALVM_HOME to point to the root of its folder.
 </p>
@@ -281,7 +281,7 @@ mvn package -Pnative
 
 <h2>Enhanced Developer Experience</h2>
 <p>
-    Now the good surprises don't end there. Since the boot times are so good, it also solve a big challenge for development workflow. 
+    Now the good surprises don't end there. Since the boot times are so good, it also solve a big challenge for development workflow.
     In fact, Quarkus also implements a livereload mechanism to reflect the changes performed on the code instantaneously.
     Try to change some of the code in the project, hit Ctrl+s and we can observe how fast the service reloads to take the changes into account.
     This is a big leap for developer productivity. As we can see here it took only 386 milliseconds to reload.
@@ -299,8 +299,8 @@ mvn package -Pnative
 
 <h2>Let's add Camel to the mix</h2>
 <p>Now that we have our hello world running. Let's try to add Camel to the mix to enable reusable integration patterns
-    and connectors in our projects. Quarkus already offers a variety extensions and Camel is one of those. At the time of writing 
-    there are just a few extensions available. We won't get the whole set of 200+ Camel components compiled to native executable packages, 
+    and connectors in our projects. Quarkus already offers a variety extensions and Camel is one of those. At the time of writing
+    there are just a few extensions available. We won't get the whole set of 200+ Camel components compiled to native executable packages,
     but I'm quite sure that the Quarkus ecosystem will grow quickly.
 </p>
 
@@ -343,7 +343,7 @@ public class CamelRouteBuilder extends RouteBuilder {
 }
 {% endhighlight %}
 
-<p>At the time of writing there is no documentation on how to get started with camel in Quarkus. 
+<p>At the time of writing there is no documentation on how to get started with camel in Quarkus.
     I found an error just trying to run this class complaining about properties not being available.</p>
 <pre>Property with key [camel.defer] not found</pre>
 
@@ -380,7 +380,7 @@ camel.dump=false
 
 <p>Let's compile it to a native executable and see how it behaves.</p>
 
-<pre> 
+<pre>
 mvn package -Pnative
 /target/quarkus-camel-first-impressions-1.0-SNAPSHOT-runner
 </pre>
@@ -416,4 +416,3 @@ mvn package -Pnative
             Quarkus: a next-generation Kubernetes native Java framework</a></li>
     <li><a href="http://in.relation.to/2019/03/08/why-quarkus/">Why Quarkus, blog article by Emmanuel Bernard</a></li>
 </ul>
-
