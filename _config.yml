@@ -19,9 +19,9 @@ description:
   This is a blog of someone passionate about technology who wants to share some of the things he knows
   about Application Development, Integration, Cloud, Big Data and Digital Transformation
   
-url : "https://delilah1004.delilah1004.github.io"
+url : "https://delilah1004.github.io/"
 baseurl: "" # the subpath of your site, e.g. /blog
-github_username:  alainpham
+github_username:  delilah1004
 
 # jekyll-paginate configuration
 paginate: 10
